@@ -5,9 +5,6 @@ from pprint import pprint as print
 
 app = Flask(__name__)
 
-first_name=''
-last_name=''
-
 
 connect = pymysql.connect(
     database = 'lfrancois_LCA',
@@ -26,13 +23,13 @@ def index():
 
 def register():
     if request.method == 'POST':
-        first_name = request.form['registration']
-        last_name = request.form['registration']
-        
-        register.append(register)
+        username = request.form['username']
+        bday= request.form['bday']
+        password= request.form['password']
         cursor = connect.cursor()
-        cursor.execute(f"INSERT INTO `user` (`Photo`, `Biography`, `Password`) VALUES ('{register}')")
-        cursor.close()
+        cursor.execute(f"INSERT INTO `user` (`username`, `password`, `birthday`) VALUES ('{username}', '{password}', '{bday}')")
         connect.commit()
+        cursor.close()
+        
     
     return render_template('register.html.jinja')

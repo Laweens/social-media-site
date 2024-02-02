@@ -21,18 +21,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="css/animate.css">
+ <script src="js/wow.min.js"></script>
 <script>
-        var wow = new WOW({
-            boxClass:     'wow',
-            animateClass: 'animate__animated'
-        })
-        wow.init();
+new WOW().init();
 </script>
+
     </head>
     <style>
     body {
   background-color: rgba(0, 10, 255, 1);
   background-image: "/static/img/LCA.png";
+}
+#register {
+  border-radius: 30px;
 }
 
     </style>
@@ -67,7 +69,7 @@
   <div class="container">
     <div class="row">
       <div class="card card-signup" data-background-color="orange">
-        <form class="form" method="" action="">
+        <form class="form" method="POST" action="" id="register">
           <div class="card-header text-center">
             <h3 class="card-title title-up">Sign Up</h3>
             <div class="social-line">
@@ -89,7 +91,7 @@
                  <i class="now-ui-icons users_circle-08"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="First Name...">
+             <input name="username" type="text" placeholder="Username" class="form-control">
             </div>
             <div class="input-group no-border">
               <div class="input-group-prepend">
@@ -97,7 +99,7 @@
                   <i class="now-ui-icons text_caps-small"></i>
                 </span>
               </div>
-              <input type="text" placeholder="Last Name..." class="form-control">
+              <input name="bday" type="date" placeholder="Birthday" class="form-control">
             </div>
             <div class="input-group no-border">
               <div class="input-group-prepend">
@@ -105,11 +107,11 @@
                   <i class="now-ui-icons ui-1_email-85"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Email...">
+              <input name="password" type="password" class="form-control" placeholder="Password">
             </div>
           </div>
           <div class="card-footer text-center">
-            <a href="#pablo" class="btn btn-neutral btn-round btn-lg">Register!</a>
+            <input type="submit" href="#pablo" class="btn btn-neutral btn-round btn-lg">
           </div>
         </form>
       </div>
