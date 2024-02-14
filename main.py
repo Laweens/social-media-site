@@ -4,6 +4,7 @@ import pymysql.cursors
 from pprint import pprint as print 
 import flask_login
 
+
 app = Flask(__name__)
 app.secret_key = "thisisjustthesecretkey"
 
@@ -77,7 +78,11 @@ def Signin():
 @app.route('/feed')
 @flask_login.login_required
 def feed():
-      return flask_login.current_user
+      cursor=connect.cursor()
+      cursor.execute('SELECT * from `Posts` ORDER BY `Timestamp`')
+      results = cursor.fetchall()
+      cursor.close()
+      return render_template("feed.html.jinja", post_list=results)
    
 
 
