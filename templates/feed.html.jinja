@@ -38,6 +38,200 @@
   </head>
 
   <body>
+  <body class=" h-100 text-center text-bg-dark">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animate__animated'
+        })
+        wow.init();
+    </script>
+
+    <style>
+        .padding-left {
+            padding-left: 385px;
+
+
+
+        }
+
+
+        .width {
+            max-width: 850px;
+
+        }
+
+
+
+        .padding-top {
+            padding-top: 50px;
+
+
+        }
+
+
+
+        .padding-bottom {
+            padding-bottom: 45px;
+
+
+
+        }
+
+
+
+
+        .white {
+            color: white;
+
+        }
+
+        .center {
+            text-align: center;
+
+        }
+
+        .img {
+            height: 42%;
+            width: 45%;
+
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+</head>
+
+
+
+
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                    <img src="Static/LCA.png" alt="logo" class="bi me-2" width="40" height="32" role="img"
+                        aria-label="Bootstrap">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+                    <li><a href="/" class="nav-link px-2 fw-bold  white">Home</a></li>
+                    <li><a href="/feed" class="nav-link px-2 fw-bold  white">Feed</a></li>
+
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="static/LCA.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="/signin">Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <main>
+
+
+
+
+            <div class="row text-center padding-bottom padding-top container-sm ">
+                <form method="POST" action="/post" class="row ">
+                    <div class="col width padding-left">
+                        <input type="text" class="form-control" placeholder="Enter a description" name="description">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary " type="submit">Create Post</button>
+
+                    </div>
+                </form>
+            </div>
+
+            <hr class='padding-bottom'>
    <form action="/post" method="POST">
                         <textarea name="description" rows="3" placeholder="What's on your mind, {{ current_user.username }}?" required></textarea>
                         <div class="add-post-links">
@@ -67,6 +261,8 @@
                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
                 <p class="post-text">{{ post.Description }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
                 {% if post.Image %}
                 <img class="post-img" src="{{ post.Image }}" alt="" />
                 {% endif %}
@@ -78,6 +274,16 @@
                     </div>
                     <div class="post-profile-icon">
                         <img src="images/profile-pic.png" alt="">
+                        </form>
+                                <button type="button"
+                                    class="btn btn-sm btn-outline-secondary disabled">{{post['likes']}}</button>
+                            </div>
+                            <small class="text-body-secondary">{{post['timestamp']}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                     </div>
                 </div>
             </div>
